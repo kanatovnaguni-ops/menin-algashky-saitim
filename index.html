@@ -13,112 +13,265 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #f7f8ff;
-      color: #252445;
+      background: #f5f7ff;
+      color: #20233f;
       line-height: 1.6;
     }
 
     header {
       min-height: 100vh;
-      padding: 30px 10%;
+      padding: 28px 9%;
       color: white;
-      background: linear-gradient(135deg, #3155d9, #8b42d5);
+      background: linear-gradient(135deg, #173d99, #6542c7);
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     nav h2 {
-      font-size: 25px;
+      font-size: 24px;
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 18px;
       color: white;
       text-decoration: none;
     }
 
     .hero {
-      max-width: 750px;
-      margin-top: 160px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 60px;
+      min-height: 82vh;
     }
 
     .hero h1 {
       margin-bottom: 20px;
-      font-size: 55px;
-      line-height: 1.1;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.08;
     }
 
     .hero p {
+      max-width: 720px;
       margin-bottom: 30px;
-      font-size: 23px;
+      font-size: 22px;
+    }
+
+    .profile-photo {
+      width: min(100%, 440px);
+      aspect-ratio: 4 / 5;
+      border: 8px solid rgba(255,255,255,0.25);
+      border-radius: 32px;
+      object-fit: cover;
+      box-shadow: 0 25px 60px rgba(10, 20, 70, 0.35);
     }
 
     .button {
       display: inline-block;
       padding: 14px 28px;
+      border: 0;
       border-radius: 30px;
       background: white;
-      color: #5437bb;
+      color: #3f35aa;
       font-weight: bold;
       text-decoration: none;
+      cursor: pointer;
     }
 
     section {
-      padding: 80px 10%;
+      padding: 80px 9%;
     }
 
     section h2 {
-      margin-bottom: 25px;
-      color: #5437bb;
-      font-size: 35px;
+      margin-bottom: 24px;
+      color: #423bb3;
+      font-size: 36px;
+    }
+
+    .about-grid,
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .panel,
+    .card,
+    .comment {
+      border: 1px solid #e5e8ff;
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 12px 35px rgba(54, 48, 130, 0.1);
+    }
+
+    .panel {
+      padding: 32px;
+    }
+
+    .facts {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .fact {
+      padding: 15px;
+      border-radius: 14px;
+      background: #f1f3ff;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
     .card {
       padding: 28px;
-      border-radius: 20px;
-      background: white;
-      box-shadow: 0 10px 30px rgba(66, 55, 145, 0.12);
     }
 
     .card h3 {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #3155d9;
     }
 
+    .qr-panel {
+      text-align: center;
+    }
+
+    .qr-panel img {
+      width: 220px;
+      max-width: 100%;
+      margin: 20px auto;
+      padding: 12px;
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(34, 33, 99, 0.12);
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      margin-top: 7px;
+      padding: 14px;
+      border: 1px solid #cfd4f4;
+      border-radius: 12px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      padding: 14px 25px;
+      border: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #3155d9, #7742c9);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    #status {
+      min-height: 25px;
+      font-weight: bold;
+    }
+
+    .comments {
+      display: grid;
+      gap: 15px;
+      max-height: 590px;
+      overflow-y: auto;
+    }
+
+    .comment {
+      padding: 20px;
+    }
+
+    .comment-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 8px;
+    }
+
+    .comment-name {
+      color: #3155d9;
+      font-weight: bold;
+    }
+
+    .comment-date {
+      color: #777a93;
+      font-size: 13px;
+    }
+
+    .empty-message {
+      padding: 25px;
+      border-radius: 15px;
+      background: #f1f3ff;
+      text-align: center;
+    }
+
     footer {
-      padding: 30px;
-      background: #252445;
+      padding: 32px;
+      background: #20233f;
       color: white;
       text-align: center;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 850px) {
       nav div {
         display: none;
       }
 
-      .hero {
-        margin-top: 110px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
+      .hero,
+      .about-grid,
+      .feedback-grid,
       .cards {
         grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 70px;
+        padding-bottom: 50px;
+      }
+
+      .profile-photo {
+        max-width: 350px;
+        margin: auto;
+      }
+
+      section {
+        padding: 60px 6%;
       }
     }
   </style>
@@ -133,27 +286,53 @@
       <div>
         <a href="#about">Мен туралы</a>
         <a href="#projects">Жобаларым</a>
-        <a href="#contact">Байланыс</a>
+        <a href="#qr">QR-код</a>
+        <a href="#feedback">Кері байланыс</a>
       </div>
     </nav>
 
     <div class="hero">
-      <h1>Қожанова Гүлнұр Қанатқызы</h1>
-      <p>
-        Информатика пәні мұғалімі, жасанды интеллект және
-        цифрлық технологиялар эксперті
-      </p>
-      <a class="button" href="#projects">Жобаларымды көру</a>
+      <div>
+        <h1>Қожанова Гүлнұр Қанатқызы</h1>
+
+        <p>
+          Информатика пәні мұғалімі, жасанды интеллект және
+          цифрлық технологиялар эксперті
+        </p>
+
+        <a class="button" href="#feedback">Пікір қалдыру</a>
+      </div>
+
+      <img
+        class="profile-photo"
+        src="profile.png.png"
+        alt="Қожанова Гүлнұр Қанатқызы"
+      >
     </div>
   </header>
 
   <section id="about">
     <h2>Мен туралы</h2>
-    <p>
-      Мен білім беру саласында жасанды интеллект, бағдарламалау,
-      AR және VR технологияларын қолданамын. Мұғалімдер мен
-      оқушыларға арналған заманауи цифрлық жобалар әзірлеймін.
-    </p>
+
+    <div class="about-grid">
+      <div class="panel">
+        <p>
+          Мен білім беру саласында жасанды интеллект,
+          бағдарламалау, AR және VR технологияларын қолданамын.
+          Мұғалімдер мен оқушыларға арналған заманауи цифрлық
+          жобалар әзірлеймін.
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="facts">
+          <div class="fact">💻 Информатика пәні мұғалімі</div>
+          <div class="fact">🤖 Жасанды интеллект эксперті</div>
+          <div class="fact">🥽 AR және VR жобаларын әзірлеуші</div>
+          <div class="fact">📍 Ақтөбе қаласы</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
@@ -162,29 +341,219 @@
     <div class="cards">
       <div class="card">
         <h3>Bastau AI</h3>
-        <p>Мұғалімдерге арналған практикалық жасанды интеллект курсы.</p>
+        <p>
+          Мұғалімдерге арналған практикалық жасанды интеллект курсы.
+        </p>
       </div>
 
       <div class="card">
         <h3>Digital Creators Lab</h3>
-        <p>AI, AR, VR және 3D технологияларын үйрететін цифрлық зертхана.</p>
+        <p>
+          AI, AR, VR және 3D технологияларын үйрететін цифрлық зертхана.
+        </p>
       </div>
 
       <div class="card">
         <h3>«Жеті қазына» VR</h3>
-        <p>Қазақ мәдениетін виртуалды ортада таныстыратын интерактивті жоба.</p>
+        <p>
+          Қазақ мәдениетін виртуалды ортада таныстыратын интерактивті жоба.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Байланыс</h2>
-    <p>Instagram: @informatik_apai</p>
+  <section id="qr">
+    <h2>Сайттың QR-коды</h2>
+
+    <div class="panel qr-panel">
+      <p>Сайтты телефоннан ашу үшін QR-кодты сканерлеңіз.</p>
+
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fkanatovnaguni-ops.github.io%2Fmenin-algashky-saitim%2F"
+        alt="Сайттың QR-коды"
+      >
+
+      <p>
+        <a href="https://kanatovnaguni-ops.github.io/menin-algashky-saitim/">
+          Сайт сілтемесін ашу
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section id="feedback">
+    <h2>Кері байланыс</h2>
+
+    <div class="feedback-grid">
+      <div class="panel">
+        <h3>Пікір қалдырыңыз</h3>
+        <br>
+
+        <form id="feedbackForm">
+          <label>
+            Аты-жөніңіз
+            <input
+              id="name"
+              type="text"
+              minlength="2"
+              maxlength="60"
+              required
+              placeholder="Аты-жөніңізді жазыңыз"
+            >
+          </label>
+
+          <label>
+            Пікіріңіз
+            <textarea
+              id="comment"
+              minlength="2"
+              maxlength="500"
+              required
+              placeholder="Пікіріңізді жазыңыз"
+            ></textarea>
+          </label>
+
+          <button id="submitButton" class="submit-button" type="submit">
+            Пікір жіберу
+          </button>
+
+          <p id="status"></p>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3>Келушілердің пікірлері</h3>
+        <br>
+
+        <div id="comments" class="comments">
+          <p class="empty-message">Пікірлер жүктелуде...</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>© 2026 Қожанова Гүлнұр Қанатқызы</p>
   </footer>
+
+  <script type="module">
+    import { initializeApp }
+      from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      query,
+      orderBy,
+      limit,
+      onSnapshot,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB6tCko1DDYILxw27BVmEGz1HGB1Z989jQ",
+      authDomain: "menin-algashky-saitim.firebaseapp.com",
+      projectId: "menin-algashky-saitim",
+      storageBucket: "menin-algashky-saitim.firebasestorage.app",
+      messagingSenderId: "807669611527",
+      appId: "1:807669611527:web:f78f56898d822bba0a3ea2"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("feedbackForm");
+    const nameInput = document.getElementById("name");
+    const commentInput = document.getElementById("comment");
+    const submitButton = document.getElementById("submitButton");
+    const status = document.getElementById("status");
+    const commentsBox = document.getElementById("comments");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const name = nameInput.value.trim();
+      const comment = commentInput.value.trim();
+
+      if (name.length < 2 || comment.length < 2) {
+        status.textContent = "Барлық жолды дұрыс толтырыңыз.";
+        status.style.color = "#c62828";
+        return;
+      }
+
+      submitButton.disabled = true;
+      status.textContent = "Пікір жіберілуде...";
+      status.style.color = "#423bb3";
+
+      try {
+        await addDoc(collection(db, "feedback"), {
+          name,
+          comment,
+          createdAt: serverTimestamp()
+        });
+
+        form.reset();
+        status.textContent = "Пікіріңіз сәтті жіберілді!";
+        status.style.color = "#16813c";
+      } catch (error) {
+        console.error(error);
+        status.textContent = "Пікір жіберілмеді. Қайта байқап көріңіз.";
+        status.style.color = "#c62828";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+
+    const feedbackQuery = query(
+      collection(db, "feedback"),
+      orderBy("createdAt", "desc"),
+      limit(30)
+    );
+
+    onSnapshot(feedbackQuery, (snapshot) => {
+      commentsBox.innerHTML = "";
+
+      if (snapshot.empty) {
+        const empty = document.createElement("p");
+        empty.className = "empty-message";
+        empty.textContent = "Әзірге пікір жоқ. Алғашқы пікірді қалдырыңыз!";
+        commentsBox.appendChild(empty);
+        return;
+      }
+
+      snapshot.forEach((documentItem) => {
+        const data = documentItem.data();
+
+        const commentCard = document.createElement("article");
+        commentCard.className = "comment";
+
+        const top = document.createElement("div");
+        top.className = "comment-top";
+
+        const name = document.createElement("span");
+        name.className = "comment-name";
+        name.textContent = data.name || "Қонақ";
+
+        const date = document.createElement("span");
+        date.className = "comment-date";
+        date.textContent = data.createdAt
+          ? data.createdAt.toDate().toLocaleString("kk-KZ")
+          : "Жаңа пікір";
+
+        const text = document.createElement("p");
+        text.textContent = data.comment || "";
+
+        top.append(name, date);
+        commentCard.append(top, text);
+        commentsBox.appendChild(commentCard);
+      });
+    }, (error) => {
+      console.error(error);
+      commentsBox.innerHTML =
+        '<p class="empty-message">Пікірлерді жүктеу кезінде қате шықты.</p>';
+    });
+  </script>
 
 </body>
 </html>
